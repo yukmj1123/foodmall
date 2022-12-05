@@ -93,6 +93,12 @@ public class Order  {
 
     }
 
+    @PreRemove
+    public void onPreRemove() {
+        OrderCancel orderCancel = new OrderCancel(this);
+        orderCancel.publishAfterCommit();
+    }
+
     public static OrderRepository repository(){
         OrderRepository orderRepository = OrderApplication.applicationContext.getBean(OrderRepository.class);
         return orderRepository;
