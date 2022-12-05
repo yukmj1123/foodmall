@@ -19,35 +19,14 @@ public class FoodCooking  {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
     private Long id;
-    
-    
-    
-    
-    
+
     private Long orderId;
-    
-    
-    
-    
-    
+
     private String orderStatus;
-    
-    
-    
-    
-    
+
     private String menuId;
-    
-    
-    
-    
-    
+
     private String storeId;
     
     
