@@ -42,7 +42,7 @@ public class OrderPageViewHandler {
         try {
             if (!paid.validate()) return;
                 // view 객체 조회
-            Optional<OrderPage> orderPageOptional = orderPageRepository.findByOrderId(paid.getId());
+            Optional<OrderPage> orderPageOptional = orderPageRepository.findById(paid.getId());
 
             if( orderPageOptional.isPresent()) {
                  OrderPage orderPage = orderPageOptional.get();
@@ -62,7 +62,7 @@ public class OrderPageViewHandler {
         try {
             if (!orderAccept.validate()) return;
                 // view 객체 조회
-            Optional<OrderPage> orderPageOptional = orderPageRepository.findByOrderId(orderAccept.getOrderId());
+            Optional<OrderPage> orderPageOptional = orderPageRepository.findById(orderAccept.getOrderId());
 
             if( orderPageOptional.isPresent()) {
                  OrderPage orderPage = orderPageOptional.get();

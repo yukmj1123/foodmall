@@ -73,6 +73,9 @@
                 'menuId': '',
                 'storeId': '',
                 'customerId': '',
+                'qty': 0,
+                'customerTel': '',
+                'customerAddr': '',
             }
         },
         methods:{

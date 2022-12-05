@@ -17,6 +17,8 @@ import DeliveryManager from "./components/listers/DeliveryCards"
 import DeliveryDetail from "./components/listers/DeliveryDetail"
 
 
+import OrderPageView from "./components/OrderPageView"
+import OrderPageViewDetail from "./components/OrderPageViewDetail"
 
 export default new Router({
     // mode: 'history',
@@ -65,6 +67,16 @@ export default new Router({
                 component: DeliveryDetail
             },
 
+            {
+                path: '/orderPages',
+                name: 'OrderPageView',
+                component: OrderPageView
+            },
+            {
+                path: '/orderPages/:id',
+                name: 'OrderPageViewDetail',
+                component: OrderPageViewDetail
+            },
 
 
 

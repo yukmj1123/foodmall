@@ -15,6 +15,9 @@
                             
                             
                             
+                            
+                            
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -24,6 +27,9 @@
                             [ MenuId :  {{data.menuId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ StoreId :  {{data.storeId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ CustomerId :  {{data.customerId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Qty :  {{data.qty }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ CustomerTel :  {{data.customerTel }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ CustomerAddr :  {{data.customerAddr }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -110,6 +116,9 @@
                 'menuId': '',
                 'storeId': '',
                 'customerId': '',
+                'qty': 0,
+                'customerTel': '',
+                'customerAddr': '',
             }
         },
         methods: {

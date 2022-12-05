@@ -22,6 +22,9 @@
             <String label="MenuId" v-model="value.menuId" :editMode="editMode"/>
             <String label="StoreId" v-model="value.storeId" :editMode="editMode"/>
             <String label="CustomerId" v-model="value.customerId" :editMode="editMode"/>
+            <Number label="Qty" v-model="value.qty" :editMode="editMode"/>
+            <String label="CustomerTel" v-model="value.customerTel" :editMode="editMode"/>
+            <String label="CustomerAddr" v-model="value.customerAddr" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>

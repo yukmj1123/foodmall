@@ -72,6 +72,9 @@
                     { text: "menuId", value: "menuId" },
                     { text: "storeId", value: "storeId" },
                     { text: "customerId", value: "customerId" },
+                    { text: "qty", value: "qty" },
+                    { text: "customerTel", value: "customerTel" },
+                    { text: "customerAddr", value: "customerAddr" },
                 ],
             foodCooking : [],
             newValue: {},
@@ -94,6 +97,9 @@
                 'menuId': '',
                 'storeId': '',
                 'customerId': '',
+                'qty': 0,
+                'customerTel': '',
+                'customerAddr': '',
             }
         },
         methods: {
