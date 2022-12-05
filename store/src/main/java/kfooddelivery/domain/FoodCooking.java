@@ -28,12 +28,14 @@ public class FoodCooking  {
     private String menuId;
 
     private String storeId;
-    
-    
-    
-    
-    
+
     private String customerId;
+
+    private Integer qty;
+
+    private String customerTel;
+
+    private String customerAddr;
 
     @PostPersist
     public void onPostPersist(){
@@ -67,11 +69,18 @@ public class FoodCooking  {
 
     public static void copyOrderInfo(OrderPlaced orderPlaced){
 
-        /** Example 1:  new item 
+        /** Example 1:  new item */
         FoodCooking foodCooking = new FoodCooking();
+        foodCooking.setMenuId(orderPlaced.getMenuId());
+        foodCooking.setQty(orderPlaced.getQty());
+        foodCooking.setStoreId(orderPlaced.getStoreId());
+        foodCooking.setCustomerId(orderPlaced.getCustomerId());
+        foodCooking.setCustomerTel(orderPlaced.getCustomerTel());
+        foodCooking.setCustomerAddr(orderPlaced.getCustomerAddr());    
+        foodCooking.setOrderStatus("Ready");    
         repository().save(foodCooking);
 
-        */
+        
 
         /** Example 2:  finding and process
         
@@ -94,16 +103,16 @@ public class FoodCooking  {
 
         */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process*/
         
-        repository().findById(paid.get???()).ifPresent(foodCooking->{
+        repository().findByOrderId(paid.getOrderId()).ifPresent(foodCooking->{
             
-            foodCooking // do something
+            foodCooking.setOrderStatus("orderPaid"); // do something
             repository().save(foodCooking);
 
 
          });
-        */
+        
 
         
     }
