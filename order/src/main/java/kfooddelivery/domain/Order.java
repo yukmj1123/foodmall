@@ -3,7 +3,7 @@ package kfooddelivery.domain;
 import kfooddelivery.domain.OrderPlaced;
 import kfooddelivery.domain.OrderCancel;
 import kfooddelivery.OrderApplication;
-import kfooddelivery.external.FoodCooking;
+import kfooddelivery.external.FoodCookingService;
 import javax.persistence.*;
 import java.util.List;
 import lombok.Data;
@@ -84,12 +84,12 @@ public class Order  {
         orderCancel.publishAfterCommit();
 
         // Get request from FoodCooking
-        kfooddelivery.external.FoodCooking foodCooking =
-           Application.applicationContext.getBean(kfooddelivery.external.FoodCookingService.class)
-           .getFoodCooking(getOrderStatus()/** mapping value needed */);
+        // kfooddelivery.external.FoodCooking foodCooking =
+        //    Application.applicationContext.getBean(kfooddelivery.external.FoodCookingService.class)
+        //    .getFoodCooking(getOrderStatus()/** mapping value needed */);
 
-        if(foodCooking.getOrderStatus() == "Paid")
-            throw new RuntimeException("not orderAccept!");
+        // if(foodCooking.getOrderStatus() == "Paid")
+        //     throw new RuntimeException("not orderAccept!");
 
     }
 
