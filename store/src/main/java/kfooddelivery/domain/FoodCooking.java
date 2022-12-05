@@ -59,11 +59,20 @@ public class FoodCooking  {
 
 
     public void accept(AcceptCommand acceptCommand){
-        OrderAccept orderAccept = new OrderAccept(this);
-        orderAccept.publishAfterCommit();
 
-        OrderReject orderReject = new OrderReject(this);
-        orderReject.publishAfterCommit();
+        if(acceptCommand.getAccept()){
+            OrderAccept orderAccept = new OrderAccept(this);
+            orderAccept.publishAfterCommit();
+
+            setOrderStatus("orderPaid");
+        }
+        else {
+
+            OrderReject orderReject = new OrderReject(this);
+            orderReject.publishAfterCommit();
+
+            setOrderStatus("orderNonPaid");
+        }
 
     }
 
@@ -99,6 +108,7 @@ public class FoodCooking  {
 
         /** Example 1:  new item 
         FoodCooking foodCooking = new FoodCooking();
+        foodCooking.setOrderStatus()
         repository().save(foodCooking);
 
         */

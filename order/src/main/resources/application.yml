@@ -1,5 +1,12 @@
 server:
   port: 8080
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 500
 spring:
   application:
     name: order
@@ -39,6 +46,10 @@ logging:
     org.hibernate.type: trace
     org.springframework.cloud: debug
 
+api:
+  url:
+    store: localhost:8082
+
 
 server:
   port: 8081
@@ -68,5 +79,9 @@ spring:
         event-out:
           destination: kfooddelivery
           contentType: application/json
+
+api:
+  url:
+    store: localhost:8080
 
 

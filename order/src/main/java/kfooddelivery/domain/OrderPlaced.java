@@ -1,10 +1,9 @@
 package kfooddelivery.domain;
 
+import java.util.*;
 import kfooddelivery.domain.*;
 import kfooddelivery.infra.AbstractEvent;
-import java.util.*;
 import lombok.*;
-
 
 @Data
 @ToString
@@ -18,10 +17,11 @@ public class OrderPlaced extends AbstractEvent {
     private String customerTel;
     private String customerAddr;
 
-    public OrderPlaced(Order aggregate){
+    public OrderPlaced(Order aggregate) {
         super(aggregate);
     }
-    public OrderPlaced(){
+
+    public OrderPlaced() {
         super();
     }
 }
