@@ -2,21 +2,25 @@ package kfooddelivery.domain;
 
 import kfooddelivery.domain.*;
 import kfooddelivery.infra.AbstractEvent;
-import lombok.*;
 import java.util.*;
+import lombok.*;
+
+
 @Data
 @ToString
-public class OrderReject extends AbstractEvent {
+public class SendMsg extends AbstractEvent {
 
     private Long id;
     private Long orderId;
     private String orderStatus;
     private String menuId;
-    private String storeId;
     private String customerId;
-    private Integer qty;
     private String customerTel;
-    private String customerAddr;
+
+    public SendMsg(Msg aggregate){
+        super(aggregate);
+    }
+    public SendMsg(){
+        super();
+    }
 }
-
-
