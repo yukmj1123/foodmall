@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: orderView
+  name: orderview
   labels:
-    app: orderView
+    app: orderview
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: orderView
+      app: orderview
   template:
     metadata:
       labels:
-        app: orderView
+        app: orderview
     spec:
       containers:
-        - name: orderView
-          image: username/orderView:latest
+        - name: orderview
+          image: hjo0045/orderview:v230216
           ports:
             - containerPort: 8080
           readinessProbe:
             httpGet:
               path: '/actuator/health'
               port: 8080
-            initialDelaySeconds: 10
+            initialDelaySeconds: 30
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 10

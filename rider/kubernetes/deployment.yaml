@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: rider
-          image: username/rider:latest
+          image: hjo0045/rider:v230216
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -26,7 +26,7 @@ spec:
             initialDelaySeconds: 10
             timeoutSeconds: 2
             periodSeconds: 5
-            failureThreshold: 10
+            failureThreshold: 30
           livenessProbe:
             httpGet:
               path: '/actuator/health'
