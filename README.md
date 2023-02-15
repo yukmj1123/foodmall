@@ -60,79 +60,35 @@
 2. 배달완료가 되면 고객 등급을 상향한다. 
 ```   
 
-## 체크포인트
+# 체크포인트
+## Microservice Implementation
 ### 1. Saga (Pub / Sub)
 
   #### 구현 : Order커맨드로 주문시 주문정보는 kafka에 저장되며 store에서는 해당 오더정보를 확인할 수 있다.
-  - ![image](https://user-images.githubusercontent.com/61446346/205812757-49e1c8be-4159-4254-b2a5-e3b7eadb3c70.png)
+   - ![image](https://user-images.githubusercontent.com/13827032/219181502-8f33ee91-5f3c-44fb-bdd9-8e0b10ab756e.png)
   
-  #### 실행
-  - Order커맨드 실행
-  - ![image](https://user-images.githubusercontent.com/61446346/205813102-0f9f9a12-7f77-495c-a055-af23e0da81e8.png)
-  - Store에서 오더정보 확인
-  - ![image](https://user-images.githubusercontent.com/61446346/205835532-0b51f886-871e-4151-afcc-720e605cf599.png)
-
-
-  #### kafka 확인
-  - ![image](https://user-images.githubusercontent.com/61446346/205813194-69878c3d-f958-4399-ae41-6200670551c3.png)
-
-
 ### 2. CQRS
-
-  - 구현 : 오더주문시 orderView 정보를 생성한고, 각 단계전진시 orderStatus상태를 현행화 관리한다.
-  - ![image](https://user-images.githubusercontent.com/61446346/205814117-7aa5d785-2d93-4d1a-90bd-8eb501648efe.png)
-
-  - 확인 : 오더주문시 생성된 데이터 
-  - ![image](https://user-images.githubusercontent.com/61446346/205814569-86d3e309-477c-40b1-8c9e-665be1c90f42.png)
+  #### 구현 : 오더주문시 orderView 정보를 생성한고, 각 단계전진시 orderStatus상태를 현행화 관리한다.
+  - ![image](https://user-images.githubusercontent.com/13827032/219182613-30b37b93-bcb2-466e-a6f1-2bafbbc56f2d.png)
 
 ### 3. Compensation / Correlation
 
   #### 구현 : 오더주문커맨드 실행시 오더정보 kafka에 적재, 오더캔슬커맨드 실행시 오더정보를 삭제한다.
   - 오더주문 
-  - ![image](https://user-images.githubusercontent.com/61446346/205846913-33451e38-0195-4ba1-a04e-4199dd09fd93.png)
+  - ![image](https://user-images.githubusercontent.com/13827032/219181502-8f33ee91-5f3c-44fb-bdd9-8e0b10ab756e.png)
 
   - 오더취소
-  - ![image](https://user-images.githubusercontent.com/61446346/205847021-47ff372f-da6d-409c-9ec3-d19fe2859461.png)
-
-  #### 실행 : 
-  - 오더주문
-  - ![image](https://user-images.githubusercontent.com/61446346/205847148-833f5e98-7df1-4639-b246-6c8c3b2dd445.png)
-
-  #### kafka 확인 : 
-  - 오더주문
-  - ![image](https://user-images.githubusercontent.com/61446346/205847939-52f2d793-e957-4a17-883f-b6c008893146.png)
-
-  - 오더취소
-  - ![image](https://user-images.githubusercontent.com/61446346/205848028-f28981bb-3cec-48a1-babb-c0a153ea8248.png)
-
-  - 오더정보 확인 : orderId = 5
-  - ![image](https://user-images.githubusercontent.com/61446346/205848158-51867ac1-c3d2-4edf-8b55-ca709a3faa43.png)
-
+  - ![image](https://user-images.githubusercontent.com/13827032/219183570-9be5b875-ff7f-45d8-aa7c-ef2ff989dd9a.png)
   
-### 4. Request / Response
+## Microservice Orchestration
+### 1. Deploy to EKS Cluster
+  #### 서비스 목록
+  ![image](https://user-images.githubusercontent.com/13827032/219187909-85cafabb-5102-430c-b357-2d661280592e.png)
 
-  #### 구현 : 주문정보 조회시 http GET 구현
-  - ![image](https://user-images.githubusercontent.com/61446346/205844002-80b55f91-6d3c-48f7-9e2e-38e48e8d2f5c.png)
-
-  #### 실행 : 
-  -   ![image](https://user-images.githubusercontent.com/61446346/205843890-597798c8-1605-4fd9-a70e-0763b2afa0d6.png)
-
-
-### 5. Circuit Breaker
- #### 설정 : 주문 서비스의 application.xml에 hystrix enabled = true와 임계치를 설정한다.
- ![image](https://user-images.githubusercontent.com/61446346/206486704-1e3eadd4-404e-4b41-8b51-5858d285f386.png)
+### 2. Gateway & Service Router 설치
+ #### 서비스 목록
+ ![image](https://user-images.githubusercontent.com/13827032/219188072-59bc89a7-e609-41cd-afe1-e9d43c1a03eb.png)
  
- #### 구현 : 오더주문시 지연처리 되도록 설정한다.
- ![image](https://user-images.githubusercontent.com/61446346/206487332-54119229-9539-4a6b-998f-5cd8f980bf86.png)
-
- #### 확인 : 서비스 실행시, 장시간 처리되지 않고 임계치 도달시 오류처리되는것을 확인한다
- ![image](https://user-images.githubusercontent.com/61446346/206488225-c5b3379b-52a8-43ab-8a01-43656645c0f3.png)
-
-
-### 6. Gateway / Ingress
- #### 구현 
-  - ![image](https://user-images.githubusercontent.com/61446346/205819140-dc60d97e-0355-4d72-96af-8fe8560089df.png)
-
- #### 실행
-  - ![image](https://user-images.githubusercontent.com/61446346/205817463-37fa0a22-7f8b-4e2d-8be3-aa76d4aabb92.png)
-
+### 3.  Autoscale (HPA)
+ #### HPA 설정
+  ![image](https://user-images.githubusercontent.com/13827032/219189662-8d50822d-1311-46b2-9c3b-86f7045fa326.png)
