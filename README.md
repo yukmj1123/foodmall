@@ -29,14 +29,15 @@
 ![image](https://user-images.githubusercontent.com/61446346/206143689-14f04447-700b-4ac0-822f-ca2c3ef64b0c.png)
 
 ### 시나리오 적용
-![image](https://user-images.githubusercontent.com/61446346/206149719-cb7a2d68-5f6d-478e-995e-717b95c769c9.png)
+![그림1](https://user-images.githubusercontent.com/80758607/219285880-eba7241c-658d-4949-bbfc-0e52ca204ef8.png)
+
 
 1. 고객이 메뉴를 선택하여 주문한다.
 2. 고객이 선택한 메뉴에 대해 결제한다.
 6. 고객은 아직 요리가 시작되지 않은 주문은 취소할 수 있다.
 9. 고객이 주문상태를 중간중간 조회한다.
 
-![image](https://user-images.githubusercontent.com/80758607/219269368-da09c8d0-c7a7-4d75-b09a-317499041d67.png)
+![그림2](https://user-images.githubusercontent.com/80758607/219285928-91be6a5a-256b-4d91-9ce6-2173d8653dbf.png)
 ```
 3. 주문이 되면 주문 내역이 입점상점주인에게 주문정보가 전달된다.
 4. 상점주는 주문을 수락하거나 거절할 수 있다.
@@ -44,7 +45,7 @@
 7. 요리가 완료되면 고객의 지역 인근의 라이더들에 의해 배송건 조회가 가능하다.
 ```
 
-![image](https://user-images.githubusercontent.com/61446346/206153621-7bedc111-ec8c-4209-80d1-177e95c6e122.png)
+![그림3](https://user-images.githubusercontent.com/80758607/219285958-136e7d79-5fc5-4593-bddd-e4a0ca6f250f.png)
 ```
 8. 라이더가 해당 요리를 Pick한 후, 앱을 통해 통보한다.
 10. 주문상태가 바뀔 때 마다 카톡으로 알림을 보낸다
