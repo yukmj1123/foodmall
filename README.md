@@ -82,19 +82,18 @@
   
 ## Microservice Orchestration
 ### 1. Deploy to EKS Cluster
-  #### 서비스 목록
-  ![image](https://user-images.githubusercontent.com/13827032/219187909-85cafabb-5102-430c-b357-2d661280592e.png)
+  #### pod 목록
+  ![image](https://user-images.githubusercontent.com/80758607/219261729-3cbafda1-6eb9-4899-840b-04baf0adad49.png)
 
 ### 2. Gateway & Service Router 설치
  #### 서비스 목록
- ![image](https://user-images.githubusercontent.com/13827032/219188072-59bc89a7-e609-41cd-afe1-e9d43c1a03eb.png)
+ ![image](https://user-images.githubusercontent.com/80758607/219261827-ba80828c-0be1-4a27-a459-cb74414433c0.png)
  
 ### 3.  Autoscale (HPA)
  #### 부하 발생 전
-  ![image](https://user-images.githubusercontent.com/13827032/219223756-a296c0c7-9afc-4171-9ae2-8d45dff99fa1.png)
+  ![image](https://user-images.githubusercontent.com/80758607/219262349-ada0c237-428a-4da4-84fa-104120b68350.png)
  #### 부하 발생 후
-  ![image](https://user-images.githubusercontent.com/13827032/219224311-38fb7b9f-0604-4040-8f4c-cad8d96feb5c.png)
+  ![image](https://user-images.githubusercontent.com/80758607/219262526-f0d4c3f5-302b-4b23-bd5e-eec47ec5ba6f.png)
  #### pod 증가
-  ![image](https://user-images.githubusercontent.com/13827032/219224443-a01133cd-ad27-4441-aaab-18e25acf84fa.png)
-
+  ![image](https://user-images.githubusercontent.com/80758607/219262587-202f0c20-184d-4b03-b5ca-e283989032fe.png)
 
