@@ -65,20 +65,20 @@
 ### 1. Saga (Pub / Sub)
 
   #### 구현 : Order커맨드로 주문시 주문정보는 kafka에 저장되며 store에서는 해당 오더정보를 확인할 수 있다.
-   - ![image](https://user-images.githubusercontent.com/13827032/219181502-8f33ee91-5f3c-44fb-bdd9-8e0b10ab756e.png)
+   - ![image](https://user-images.githubusercontent.com/80758607/219262782-4be05cd9-877f-4e8f-892b-652bb35a7080.png)
   
 ### 2. CQRS
   #### 구현 : 오더주문시 orderView 정보를 생성한고, 각 단계전진시 orderStatus상태를 현행화 관리한다.
-  - ![image](https://user-images.githubusercontent.com/13827032/219182613-30b37b93-bcb2-466e-a6f1-2bafbbc56f2d.png)
+  - ![image](https://user-images.githubusercontent.com/80758607/219263019-749f7861-4843-4b78-b8f4-4766f8e57b5f.png)
 
 ### 3. Compensation / Correlation
 
   #### 구현 : 오더주문커맨드 실행시 오더정보 kafka에 적재, 오더캔슬커맨드 실행시 오더정보를 삭제한다.
   - 오더주문 
-  - ![image](https://user-images.githubusercontent.com/13827032/219181502-8f33ee91-5f3c-44fb-bdd9-8e0b10ab756e.png)
+  - ![image](https://user-images.githubusercontent.com/80758607/219262782-4be05cd9-877f-4e8f-892b-652bb35a7080.png)
 
   - 오더취소
-  - ![image](https://user-images.githubusercontent.com/13827032/219183570-9be5b875-ff7f-45d8-aa7c-ef2ff989dd9a.png)
+  - ![image](https://user-images.githubusercontent.com/80758607/219263102-c11eb190-2bf2-4957-858f-402d2753165c.png)
   
 ## Microservice Orchestration
 ### 1. Deploy to EKS Cluster
