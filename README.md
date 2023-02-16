@@ -89,7 +89,7 @@
  #### 서비스 목록
  ![image](https://user-images.githubusercontent.com/80758607/219261827-ba80828c-0be1-4a27-a459-cb74414433c0.png)
  
-### 3.  Autoscale (HPA)
+### 3.  Autoscale (HPA) 
  #### 부하 발생 전
   ![image](https://user-images.githubusercontent.com/80758607/219262349-ada0c237-428a-4da4-84fa-104120b68350.png)
  #### 부하 발생 후
