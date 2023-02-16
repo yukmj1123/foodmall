@@ -72,7 +72,7 @@
 
 ### 3. Compensation / Correlation
 
-  #### 구현 : 오더주문커맨드 실행시 오더정보 kafka에 적재, 오더캔슬커맨드 실행시 오더정보를 삭제한다.
+  ####  구현 : 오더주문커맨드 실행시 오더정보 kafka에 적재, 오더캔슬커맨드 실행시 오더정보를 삭제한다.
   - 오더주문 
   - ![image](https://user-images.githubusercontent.com/80758607/219262782-4be05cd9-877f-4e8f-892b-652bb35a7080.png)
 
