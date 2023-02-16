@@ -90,5 +90,11 @@
  ![image](https://user-images.githubusercontent.com/13827032/219188072-59bc89a7-e609-41cd-afe1-e9d43c1a03eb.png)
  
 ### 3.  Autoscale (HPA)
- #### HPA 설정
-  ![image](https://user-images.githubusercontent.com/13827032/219189662-8d50822d-1311-46b2-9c3b-86f7045fa326.png)
+ #### 부하 발생 전
+  ![image](https://user-images.githubusercontent.com/13827032/219223756-a296c0c7-9afc-4171-9ae2-8d45dff99fa1.png)
+ #### 부하 발생 후
+  ![image](https://user-images.githubusercontent.com/13827032/219224311-38fb7b9f-0604-4040-8f4c-cad8d96feb5c.png)
+ #### pod 증가
+  ![image](https://user-images.githubusercontent.com/13827032/219224443-a01133cd-ad27-4441-aaab-18e25acf84fa.png)
+
+
