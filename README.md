@@ -36,7 +36,8 @@
 6. 고객은 아직 요리가 시작되지 않은 주문은 취소할 수 있다.
 9. 고객이 주문상태를 중간중간 조회한다.
 
-![image](https://user-images.githubusercontent.com/61446346/206151197-7b8c9b4e-0b3f-4f5b-b4e2-f07e6066ab06.png)
+![image](https://user-images.githubusercontent.com/80758607/219269158-50bab7a4-f227-4d06-8b6e-4ff98f1fd325.png)
+
 ```
 3. 주문이 되면 주문 내역이 입점상점주인에게 주문정보가 전달된다.
 4. 상점주는 주문을 수락하거나 거절할 수 있다.
